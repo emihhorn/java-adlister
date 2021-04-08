@@ -17,9 +17,17 @@ public class HelloWorldServlet extends HttpServlet {
     public void init() {
         hitCount = 0;
     }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        res.setContentType("text/html");
+        String name = req.getParameter("name");
+        hitCount++;
         PrintWriter out = res.getWriter();
-        out.println("<h1>Hello Luna!");
+        if (name != null) {
+            out.println("<h1>Hello, " + name + "!");
+        } else {
+            out.println("<h1>Hello, World!</h1></");
+        }
     }
 }
