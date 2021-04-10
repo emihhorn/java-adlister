@@ -1,21 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: emilyhorn
-  Date: 4/8/21
-  Time: 4:25 PM
+  Date: 4/9/21
+  Time: 11:01 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-
-    <head>
-        <title><%= request.getParameter("title") %></title>
-        <%@include file="stylesheets.html" %>
-    </head>
-
+<jsp:include page="partials/head.jsp">
+    <jsp:param name="title" value="Hello Page"/>
+</jsp:include>
 <body>
-
-
-
+<h1>Hello Page</h1>
 </body>
 </html>
