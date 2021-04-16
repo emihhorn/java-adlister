@@ -1,5 +1,10 @@
 
+
 USE adlister_db;
+
+DROP TABLE IF EXISTS ads;
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE IF NOT EXISTS users
 (
     id       INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -16,5 +21,6 @@ CREATE TABLE IF NOT EXISTS ads
     description VARCHAR(100) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
+        ON DELETE CASCADE
     );
 DESCRIBE users;
